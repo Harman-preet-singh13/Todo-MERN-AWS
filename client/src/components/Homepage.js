@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import Todo from "./Todo";
+import Todo from "./Todo/Todo";
 
 
 export default function Homepage() {
