@@ -59,7 +59,24 @@ class Task {
       console.error('Error fetching user tasks from DynamoDB', error);
       throw error;
     }
-    
+  }
+
+  static async deleteTask(taskId) {
+
+    const params = {
+      TableName: 'taskManagement',
+      Key: {
+        taskId: taskId,
+      },
+    };
+
+    try {
+      await dynamoDB.delete(params).promise();
+      return { message: 'Task deleted successfully' };
+    } catch (error) {
+      console.error('Error deleting task from DynamoDB', error);
+      throw error;
+    }
   }
 }
 

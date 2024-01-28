@@ -5,8 +5,8 @@ import {
   Navigate,
   Routes,
 } from "react-router-dom";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/Authpage/Login";
+import Register from "./components/Authpage/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import Homepage from "./components/Homepage";
 import { AuthProvider } from "./customHook/Auth";

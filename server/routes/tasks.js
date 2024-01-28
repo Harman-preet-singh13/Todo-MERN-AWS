@@ -27,4 +27,17 @@ router.get('/getUserTasks/:userId', async (req, res) => {
   }
 });
 
+router.delete('/deleteTask/:taskId', async (req, res) => {
+
+  const taskId = req.params.taskId;
+
+  try {
+    const result = await Task.deleteTask( taskId);
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 module.exports = router;
